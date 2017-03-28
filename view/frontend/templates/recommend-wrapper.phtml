@@ -1,0 +1,21 @@
+<?php /* @var \FPTCorp\Recommendation\Block\ProductList\Wrapper $block */ ?>
+<div id="fpt-recommendation-wrapper"></div>
+<script>
+    require([
+        'jquery',
+        'knowlead',
+        'domReady!'
+    ], function ($, knowlead) {
+        $.ajax({
+            url: '<?php echo $block->getAjaxUrl() ?>',
+            method: 'POST',
+            data: {
+                'type': '<?php echo $block->getType() ?>',
+                'kl_session_id': knowlead.sessionId,
+                'product_ids': '<?php echo $block->getProductIds() ?>'
+            }
+        }).done(function(data) {
+            $('#fpt-recommendation-wrapper').html(data).trigger('contentUpdated');
+        });
+    });
+</script>

@@ -1,0 +1,9 @@
+<?php /** @var \FPTCorp\Recommendation\Block\Checkout\Js $block */ ?>
+<script type="text/javascript">
+require([
+    'knowlead'
+], function (knowlead) {
+    knowlead.signal('purchase', <?php echo $block->getPurchaseJs() ?>)
+});
+</script>
+

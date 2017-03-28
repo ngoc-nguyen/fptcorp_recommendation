@@ -1,0 +1,9 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+echo $block->getChildHtml('fptcorp.recommend.js');
+?>
+<script>
+    var require = {
+        "baseUrl": "<?php /* @escapeNotVerified */ echo $block->getViewFileUrl('/') ?>"
+    };
+</script>

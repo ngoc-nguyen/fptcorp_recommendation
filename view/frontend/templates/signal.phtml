@@ -1,0 +1,57 @@
+<script>
+    var getCookie = function (name) {
+        var value = "; " + document.cookie;
+        var parts = value.split("; " + name + "=");
+        if (parts.length == 2) return parts.pop().split(";").shift();
+    };
+    var setCookie = function(name, value, days) {
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime()+(days*24*60*60*1000));
+            var expires = "; expires=" + date.toGMTString();
+        }
+        else var expires = "";
+        document.cookie = name + "=" + value + expires + "; path=/";
+
+    };
+    var eraseCookie = function(name) {
+        setCookie(name,"",-1);
+    };
+
+    require([
+    'jquery',
+    'knowlead',
+    'jquery/jquery-storageapi',
+    'domReady!'
+    ], function ($, knowlead) {
+
+        var signalAddToCart = function(cookieName,cartId){
+            var producInfo = getCookie(cookieName);
+            if (typeof producInfo =='undefined') return;
+            // productInfo = cartId ## productId ## quantity
+            var info = producInfo.split("##");
+            //productItem = productId + ":" + qty;
+            var productItem = info[1] + ":" + info[2];
+            var cartInfo ={"CartID":cartId,"items": productItem};
+            knowlead.signal('addToCart',cartInfo);
+            eraseCookie(cookieName);
+        };
+
+        var cartId = getCookie('cart_id_recommendation');
+        if (typeof(cartId) == 'undefined' || cartId == 'undefined') {
+            var cacheStorage = $.localStorage.get('mage-cache-storage');
+            if (cacheStorage != null && typeof (cacheStorage.cart) != 'undefined') {
+                cartId = cacheStorage.cart.cart_id;
+            }
+        }
+        if (typeof(cartId) !='undefined' && cartId != 'undefined') {
+            var cookieName = cartId + '_recommendation';
+            signalAddToCart(cookieName, cartId);
+
+            var firstProduct = getCookie('undefined_recommendation');
+            if ((typeof firstProduct != 'undefined') || (firstProduct != null)) {
+                signalAddToCart('undefined_recommendation',cartId);
+            }
+        }
+    });
+</script>

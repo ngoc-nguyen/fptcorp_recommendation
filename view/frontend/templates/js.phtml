@@ -1,0 +1,11 @@
+<?php /** @var \FPTCorp\Recommendation\Block\Js $block */?>
+<script type="text/javascript">
+    window._klDmp = window._klDmp || "";
+    window._klDmp = '<?php echo $block->getSiteId() ?>'; // Site Id
+
+    <?php if ($block->getProductId()) : ?>
+    window._klProductId = '<?php echo $block->getProductId() ?>'; // Product Id
+    <?php endif; ?>
+
+</script>
+
