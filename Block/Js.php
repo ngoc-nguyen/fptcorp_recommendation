@@ -44,8 +44,8 @@ class Js extends Template
         }
         return '';
     }
-    public function getAppId()
+    public function getAPIkey()
     {
-        return $this->helper->getAppId();
+        return $this->helper->getAPIkey();
     }
 }

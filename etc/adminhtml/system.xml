@@ -20,8 +20,8 @@
                         <field id="enabled">1</field>
                     </depends>
                 </field>
-                <field id="app_id" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>App Id</label>
+                <field id="api_key" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>API Key</label>
                     <depends>
                         <field id="enabled">1</field>
                     </depends>

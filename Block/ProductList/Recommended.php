@@ -3,7 +3,7 @@ namespace FPTCorp\Recommendation\Block\ProductList;
 
 class Recommended extends \Magento\Catalog\Block\Product\ProductList\Related
 {
-    const API_URL = 'http://10.3.9.246:6969/recommend/';
+    const API_URL = 'http://api.knowlead.io/';
 
     const LIMIT = 10;
 
@@ -82,7 +82,8 @@ class Recommended extends \Magento\Catalog\Block\Product\ProductList\Related
                 'logType' => $this->getType(),
                 'limit' => self::LIMIT,
                 'productIds' => $this->getProductIds(),
-                'appId' => $this->helper->getAppId()
+                'apiKey' => $this->helper->getAPIkey(),
+                'siteId' => $this->helper->getSiteId()
             ]);
 
         $productIds = [];
