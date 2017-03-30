@@ -3,7 +3,7 @@ namespace FPTCorp\Recommendation\Block\ProductList;
 
 class Recommended extends \Magento\Catalog\Block\Product\ProductList\Related
 {
-    const API_URL = 'http://api.knowlead.io/';
+    const API_URL = 'http://api.knowlead.io/shoprecommend/';
 
     const LIMIT = 10;
 
