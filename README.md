@@ -54,7 +54,8 @@ Enter the following command in the order show
 
 		cd <your Magento install dir>
 		composer require fptcorp/recommendation
-
+		bin/magento setup:upgrade
+		bin/magento cache:flush
 
 ### Verifying the reference module
 
@@ -71,6 +72,15 @@ Enter the following command in the order show
 
 If **FPTCORP** tab displays you successfully installed the reference module!
 
+To use the module you should register with us https://dashboard.knowlead.io/signup 
+After signup an email will be sent to you with siteId and API_key to enable the module.
+Go to the FPTCorp tab, enter the siteId and API_key as in the email. Save the config.
+
+From the command line enter the following in the order show 
+
+		cd <your Magento install dir>
+		bin/magento cache:flush
+
 To see the reference module at work.
 
-After client use the system for a while a list of recommended products displays. That's it! You're done!
+After visitor use the system for a while a list of recommended products displays. That's it! You're done!
