@@ -1,11 +1,7 @@
 # FPT Recommendation Module
 
-Thank you for trying the FPT Recommendation module! Right now it simply displays a list of Magento modules but you can use it to:
-
-* See the basic components of a Magento module and where they belong
-* Do a quick installation
-* See it work
-
+Thank you for trying the FPT Recommendation module! 
+This module will improve your sales significantly. More deals are facilated when visitor are served with relevant offers and additional cross-and-upsell recommendations.
 
 ## Installing and verifying the reference module
 
@@ -55,8 +51,10 @@ To add the module to your Magento installation:
 ### Installing the module using Composer
 
 Enter the following command in the order show 
+
 		cd <your Magento install dir>
 		composer require fptcorp/recommendation
+
 
 ### Verifying the reference module
 
