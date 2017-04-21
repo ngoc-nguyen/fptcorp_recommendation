@@ -1,7 +1,7 @@
 # FPT Recommendation Module
 
 Thank you for trying the FPT Recommendation module! 
-This module will improve your sales significantly. More deals are facilated when visitor are served with relevant offers and additional cross-and-upsell recommendations.
+This module will improve your sales significantly. More deals are facilitated when visitor are served with relevant offers and additional cross-and-upsell recommendations.
 
 ## Installing and verifying the reference module
 
